@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Up Club - Student Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="stepup.svg">
+  </head>
+  
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1><i class="fas fa-graduation-cap"></i> Step Up Club</h1>
+    <p>Technology, Innovation, and Entrepreneurship</p>
+      <div class="university-badge">
+        <i class="fas fa-university"></i>
+        <span>University Student Club</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="#about" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="nav-link">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a href="#registration" class="nav-link">Registration</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Privacy Modal -->
+  <div id="privacyModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-shield-alt"></i> Privacy Notice</h3>
+        <button class="modal-close" onclick="closePrivacyModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Privacy Notice:</strong> We use your information solely for club registration purposes. Your data will not be shared with any third parties and will be kept confidential.</p>
+        <p>By continuing with the registration, you agree to our privacy policy and terms of service.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="acceptPrivacyAndContinue()">
+          <i class="fas fa-check"></i> I Agree and Continue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="card academic-card">
+          <h2 class="section-title">About Our Club</h2>
+          <p>
+            Step Up Club is a prestigious university student organization dedicated to fostering innovation, 
+            technological advancement, and entrepreneurial spirit among our academic community. We provide 
+            a platform for students to develop practical skills, engage in cutting-edge projects, and 
+            connect with industry leaders and fellow innovators.
+          </p>
+          <div class="academic-features">
+            <div class="feature-item">
+              <i class="fas fa-microscope"></i>
+              <h3>Research & Development</h3>
+              <p>Advanced research projects and technical innovation</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-users"></i>
+              <h3>Academic Community</h3>
+              <p>Connect with like-minded students and faculty</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-trophy"></i>
+              <h3>Competitions & Awards</h3>
+              <p>Participate in national and international competitions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="card academic-card">
+          <h2 class="section-title">Contact Us</h2>
+          <p class="text-center">Get in touch with our team for any questions or inquiries</p>
+          
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Address</h4>
+                <p>Mohamed Cherif Messaadia University, Souk Ahras<br>New University Pole</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Phone</h4>
+                <p>+213665338889</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>stepupsoukahras@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fab fa-whatsapp"></i>
+              <div>
+                <h4>WhatsApp</h4>
+                <p>+963 985 100 111<br>Available 24/7 for urgent inquiries</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Office Hours</h4>
+                <p>Sunday - Thursday: 9:00 AM - 14:00 PM</p>
+              </div>
+            </div>
+            
+            <div class="footer-social">
+              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://t.me/stepupclubsoukahras" class="social-link"><i class="fab fa-telegram"></i></a>
+              <a href="https://wa.me/+963985100111" class="social-link whatsapp-link"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="section">
+      <div class="container">
+        <div class="card academic-card">
+          <h2 class="section-title">Student Registration</h2>
+          
+          <!-- Progress Bar -->
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+  </div>
+
+          <form id="registrationForm" class="form">
+            <!-- Step 1: Personal Information -->
+            <div data-step="1" class="form-step">
+              <h3 class="step-title">Personal Information</h3>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName" class="form-label required">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label required">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="06XXXXXXXX or 05XXXXXXXX or 07XXXXXXXX">
+                </div>
+                <div class="form-group">
+                  <label for="registrationNumber" class="form-label required">Registration Number</label>
+                  <input type="text" id="registrationNumber" name="registrationNumber" class="form-input" placeholder="12345678" maxlength="8" required>
+                  <div id="regNumberValidation" class="validation-message"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="baccalaureateYear" class="form-label required">Baccalaureate Year</label>
+                <select id="baccalaureateYear" name="baccalaureateYear" class="form-select" required>
+                  <option value="">Select Year</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                  <option value="2013">2013</option>
+                  <option value="2012">2012</option>
+                  <option value="2011">2011</option>
+                  <option value="2010">2010</option>
+                  <option value="2009">2009</option>
+                  <option value="2008">2008</option>
+                  <option value="2007">2007</option>
+                  <option value="2006">2006</option>
+                  <option value="2005">2005</option>
+                  <option value="2004">2004</option>
+                  <option value="2003">2003</option>
+                  <option value="2002">2002</option>
+                  <option value="2001">2001</option>
+                  <option value="2000">2000</option>
+                  <option value="1999">1999</option>
+                  <option value="1998">1998</option>
+                  <option value="1997">1997</option>
+                  <option value="1996">1996</option>
+                  <option value="1995">1995</option>
+                  <option value="1994">1994</option>
+                  <option value="1993">1993</option>
+                  <option value="1992">1992</option>
+                  <option value="1991">1991</option>
+                  <option value="1990">1990</option>
+                  <option value="1989">1989</option>
+                  <option value="1988">1988</option>
+                  <option value="1987">1987</option>
+                  <option value="1986">1986</option>
+                  <option value="1985">1985</option>
+                  <option value="1984">1984</option>
+                  <option value="1983">1983</option>
+                  <option value="1982">1982</option>
+                  <option value="1981">1981</option>
+                  <option value="1980">1980</option>
+                  <option value="1979">1979</option>
+                  <option value="1978">1978</option>
+                  <option value="1977">1977</option>
+                  <option value="1976">1976</option>
+                  <option value="1975">1975</option>
+                  <option value="1974">1974</option>
+                  <option value="1973">1973</option>
+                  <option value="1972">1972</option>
+                  <option value="1971">1971</option>
+                  <option value="1970">1970</option>
+                  <option value="1969">1969</option>
+                  <option value="1968">1968</option>
+                  <option value="1967">1967</option>
+                  <option value="1966">1966</option>
+                  <option value="1965">1965</option>
+                  <option value="1964">1964</option>
+                  <option value="1963">1963</option>
+                  <option value="1962">1962</option>
+                  <option value="1961">1961</option>
+                  <option value="1960">1960</option>
+                  <option value="1959">1959</option>
+                  <option value="1958">1958</option>
+                  <option value="1957">1957</option>
+                  <option value="1956">1956</option>
+                  <option value="1955">1955</option>
+                  <option value="1954">1954</option>
+                  <option value="1953">1953</option>
+                  <option value="1952">1952</option>
+                  <option value="1951">1951</option>
+                  <option value="1950">1950</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Step 2: Academic Information -->
+            <div data-step="2" class="form-step" style="display: none;">
+              <h3 class="step-title">Academic Information</h3>
+              <p class="step-description">Please select your faculty and department to complete your academic profile.</p>
+              
+              <div id="facultySelection" class="faculty-selection">
+                <div class="faculty-title">
+                  <i class="fas fa-graduation-cap"></i>
+                  Select Your Faculty and Department
+                </div>
+                
+                <div class="form-group">
+                  <label for="faculty" class="form-label required">Faculty</label>
+                  <select id="faculty" name="faculty" class="form-select" required>
+                    <option value="">-- Select Faculty --</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="department" class="form-label required">Department</label>
+                  <select id="department" name="department" class="form-select" required>
+                    <option value="">-- Select Department --</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="skills" class="form-label required">Your Skills</label>
+                <textarea id="skills" name="skills" class="form-textarea" placeholder="Describe your skills in detail..." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label required">Area of Interest</label>
+                <div class="interest-checkboxes">
+                  <div class="interest-category">
+                    <h5>Design & Creative</h5>
+                    <div class="checkbox-group">
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Graphic Design">
+                        <span class="checkmark"></span>
+                        Graphic Design
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="UI/UX Design">
+                        <span class="checkmark"></span>
+                        UI/UX Design
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Web Design">
+                        <span class="checkmark"></span>
+                        Web Design
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Logo Design">
+                        <span class="checkmark"></span>
+                        Logo Design
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Branding">
+                        <span class="checkmark"></span>
+                        Branding
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="interest-category">
+                    <h5>Writing & Content</h5>
+                    <div class="checkbox-group">
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Content Writing">
+                        <span class="checkmark"></span>
+                        Content Writing
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Technical Writing">
+                        <span class="checkmark"></span>
+                        Technical Writing
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Copywriting">
+                        <span class="checkmark"></span>
+                        Copywriting
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Blogging">
+                        <span class="checkmark"></span>
+                        Blogging
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="interest-category">
+                    <h5>Voice & Audio</h5>
+                    <div class="checkbox-group">
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Voice Acting">
+                        <span class="checkmark"></span>
+                        Voice Acting
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Podcasting">
+                        <span class="checkmark"></span>
+                        Podcasting
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Audio Production">
+                        <span class="checkmark"></span>
+                        Audio Production
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Narration">
+                        <span class="checkmark"></span>
+                        Narration
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="interest-category">
+                    <h5>Business & Management</h5>
+                    <div class="checkbox-group">
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Project Management">
+                        <span class="checkmark"></span>
+                        Project Management
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Business Development">
+                        <span class="checkmark"></span>
+                        Business Development
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Client Relations">
+                        <span class="checkmark"></span>
+                        Client Relations
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Entrepreneurship">
+                        <span class="checkmark"></span>
+                        Entrepreneurship
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="interest-category">
+                    <h5>Technical & Programming</h5>
+                    <div class="checkbox-group">
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Web Development">
+                        <span class="checkmark"></span>
+                        Web Development
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Mobile Development">
+                        <span class="checkmark"></span>
+                        Mobile Development
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Programming">
+                        <span class="checkmark"></span>
+                        Programming
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Database Management">
+                        <span class="checkmark"></span>
+                        Database Management
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="AI & Machine Learning">
+                        <span class="checkmark"></span>
+                        AI & Machine Learning
+                      </label>
+                      <label class="checkbox-item">
+                        <input type="checkbox" name="interest" value="Cybersecurity">
+                        <span class="checkmark"></span>
+                        Cybersecurity
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Document Upload -->
+            <div data-step="3" class="form-step" style="display: none;">
+              <h3 class="step-title">Document Upload</h3>
+              <p class="step-description">Please upload the required documents. All files will be automatically processed and converted to PDF format.</p>
+              
+              <div class="form-group">
+                <label class="form-label required">Student Card / ID Document</label>
+                <div class="file-upload">
+                  <input type="file" id="studentCard" name="studentCard" class="file-upload-input" accept="image/*,application/pdf" required>
+                  <label for="studentCard" class="file-upload-label">
+                    <i class="fas fa-id-card file-upload-icon"></i>
+                    <div class="file-upload-text">Click to upload or drag and drop</div>
+                    <div class="file-upload-hint">JPG, PNG or PDF (Max 5MB)</div>
+                  </label>
+                </div>
+                <div id="studentCardPreview" class="file-preview"></div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label required">School Certificate / Photo</label>
+                <div class="file-upload">
+                  <input type="file" id="photo" name="photo" class="file-upload-input" accept="image/*" required>
+                  <label for="photo" class="file-upload-label">
+                    <i class="fas fa-graduation-cap file-upload-icon"></i>
+                    <div class="file-upload-text">Click to upload or drag and drop</div>
+                    <div class="file-upload-hint">School Certificate or Personal Photo - JPG or PNG (Max 5MB)</div>
+                  </label>
+                </div>
+                <div id="photoPreview" class="file-preview"></div>
+              </div>
+
+
+              <div class="upload-info">
+                <h4><i class="fas fa-info-circle"></i> Document Requirements:</h4>
+                <ul>
+                  <li><strong>Student Card/ID:</strong> Must be clearly visible and readable</li>
+                  <li><strong>School Certificate/Photo:</strong> School certificate or clear personal photo</li>
+                  <li><strong>Quality Check:</strong> All documents will be automatically scanned for readability</li>
+                  <li><strong>Format:</strong> Images will be converted to PDF format for submission</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Step 4: Review and Submit -->
+            <div data-step="4" class="form-step" style="display: none;">
+              <h3 class="step-title">Review Your Information</h3>
+              
+              <div class="review-section">
+                <h4>Personal Information</h4>
+                <div class="review-item">
+                  <strong>Name:</strong> <span id="reviewName">-</span>
+                </div>
+                <div class="review-item">
+                  <strong>Email:</strong> <span id="reviewEmail">-</span>
+                </div>
+                <div class="review-item">
+                  <strong>Phone:</strong> <span id="reviewPhone">-</span>
+                </div>
+                <div class="review-item">
+                  <strong>Registration Number:</strong> <span id="reviewRegNumber">-</span>
+                </div>
+                <div class="review-item">
+                  <strong>Baccalaureate Year:</strong> <span id="reviewBacYear">-</span>
+                </div>
+              </div>
+
+              <div class="review-section">
+                <h4>Academic Information</h4>
+                <div class="review-item">
+                  <strong>Faculty:</strong> <span id="reviewFaculty">-</span>
+                </div>
+                <div class="review-item">
+                  <strong>Department:</strong> <span id="reviewDepartment">-</span>
+                </div>
+                <div class="review-item">
+                  <strong>Skills:</strong> <span id="reviewSkills">-</span>
+                </div>
+              </div>
+
+              <div class="review-section">
+                <h4>Documents</h4>
+                <div class="review-item">
+                  <strong>Student Card:</strong> <span id="reviewStudentCard">-</span>
+                </div>
+                <div class="review-item">
+                  <strong>School Certificate/Photo:</strong> <span id="reviewPhoto">-</span>
+                </div>
+              </div>
+
+              <div class="terms-checkbox">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="termsAccepted" required>
+                  <span class="checkmark"></span>
+                  I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and <a href="#" class="terms-link">Privacy Policy</a>
+                </label>
+              </div>
+
+              <div class="receipt-actions">
+                <button type="button" class="btn btn-secondary" onclick="generateReceipt()">
+                  <i class="fas fa-print"></i> Print Registration Receipt
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="downloadReceiptPDF()">
+                  <i class="fas fa-file-pdf"></i> Download as PDF
+                </button>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+              <button type="button" id="prevBtn" class="btn btn-secondary" style="display: none;">
+                <i class="fas fa-arrow-left"></i> Previous
+              </button>
+              
+              <button type="button" id="nextBtn" class="btn btn-primary">
+                Next <i class="fas fa-arrow-right"></i>
+              </button>
+              
+              <button type="submit" id="submitBtn" class="btn btn-primary" style="display: none;">
+                <i class="fas fa-paper-plane"></i> Submit Registration
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Step Up Club</h3>
+          <p>Empowering students through technology, innovation, and entrepreneurship. Join our community of future leaders and innovators.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://t.me/stepupclubsoukahras" class="social-link"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#registration">Registration</a></li>
+          </ul>
+        </div>
+        
+        
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Mohamed Cherif Messaadia University, Souk Ahras, New University Pole</p>
+          <p><i class="fas fa-phone"></i> +963 985 100 111</p>
+          <p><i class="fas fa-envelope"></i> stepupsoukahras@gmail.com</p>
+          <p><i class="fab fa-whatsapp"></i> +963 985 100 111 (WhatsApp)</p>
+          <p><i class="fas fa-clock"></i> Sun-Thu: 9AM-2PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Step Up Club. All rights reserved. | Privacy Policy | Terms of Service</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Receipt Container (Hidden) -->
+  <div id="receiptContainer" class="receipt-container">
+    <div class="receipt-header">
+      <div class="receipt-title">Step Up Club</div>
+      <div class="university-name">University of Mohamed Cherif Messaadia Souk Ahras</div>
+      <div class="university-address">Sub-Directorate of Scientific, Cultural and Sports Activities</div>
+      <div class="receipt-subtitle">Registration Receipt</div>
+    </div>
+
+    <div class="receipt-content">
+      <div class="receipt-section">
+        <h4>Personal Information</h4>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Full Name:</span>
+          <span class="receipt-item-value" id="receiptName">-</span>
+        </div>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Email:</span>
+          <span class="receipt-item-value" id="receiptEmail">-</span>
+        </div>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Phone:</span>
+          <span class="receipt-item-value" id="receiptPhone">-</span>
+        </div>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Registration Number:</span>
+          <span class="receipt-item-value" id="receiptRegNumber">-</span>
+        </div>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Baccalaureate Year:</span>
+          <span class="receipt-item-value" id="receiptBacYear">-</span>
+        </div>
+      </div>
+
+      <div class="receipt-section">
+        <h4>Academic Information</h4>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Faculty:</span>
+          <span class="receipt-item-value" id="receiptFaculty">-</span>
+        </div>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Department:</span>
+          <span class="receipt-item-value" id="receiptDepartment">-</span>
+        </div>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Skills:</span>
+          <span class="receipt-item-value" id="receiptSkills">-</span>
+        </div>
+      </div>
+
+      <div class="receipt-section">
+        <h4>Registration Details</h4>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Registration Date:</span>
+          <span class="receipt-item-value" id="receiptDate">-</span>
+        </div>
+        <div class="receipt-item">
+          <span class="receipt-item-label">Registration ID:</span>
+          <span class="receipt-item-value" id="receiptId">-</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="receipt-footer">
+      <div class="receipt-date">
+        <strong>Generated on:</strong> <span id="receiptGeneratedDate">-</span>
+      </div>
+
+      <div style="margin-top: 2rem; font-size: 0.8rem; color: #666;">
+        <p><strong>Note:</strong> This receipt serves as proof of registration. Please keep it for your records.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
