@@ -485,7 +485,6 @@ class RegistrationSystem {
       faculty: formData.get('faculty'),
       department: formData.get('department'),
       telegramUsername: formData.get('telegramUsername'),
-      skills: formData.get('skills'),
       studentCard: formData.get('studentCard'),
       photo: formData.get('photo')
     };
@@ -507,9 +506,6 @@ class RegistrationSystem {
 • Baccalaureate Year: ${data.baccalaureateYear}
 • Faculty: ${data.faculty}
 • Department: ${data.department}
-
-💡 **Skills:**
-• Skills: ${data.skills}
 
 📅 **Registration Date:** ${new Date().toLocaleDateString()}
     `;
@@ -611,7 +607,6 @@ class RegistrationSystem {
     // Update academic information
     document.getElementById('reviewFaculty').textContent = formData.faculty || '-';
     document.getElementById('reviewDepartment').textContent = formData.department || '-';
-    document.getElementById('reviewSkills').textContent = formData.skills || '-';
     
     
     // Update documents
@@ -811,8 +806,7 @@ function downloadReceiptPDF() {
   
   const academicInfo = [
     ['Faculty:', formData.faculty || '-'],
-    ['Department:', formData.department || '-'],
-    ['Skills:', formData.skills || '-']
+    ['Department:', formData.department || '-']
   ];
   
   academicInfo.forEach(([label, value]) => {
@@ -881,8 +875,7 @@ function collectFormDataForReceipt() {
     registrationNumber: formData.get('registrationNumber'),
     baccalaureateYear: formData.get('baccalaureateYear'),
     faculty: formData.get('faculty'),
-    department: formData.get('department'),
-    skills: formData.get('skills')
+    department: formData.get('department')
   };
 }
 
@@ -895,7 +888,6 @@ function populateReceiptData(formData) {
   document.getElementById('receiptBacYear').textContent = formData.baccalaureateYear || '-';
   document.getElementById('receiptFaculty').textContent = formData.faculty || '-';
   document.getElementById('receiptDepartment').textContent = formData.department || '-';
-  document.getElementById('receiptSkills').textContent = formData.skills || '-';
   document.getElementById('receiptDate').textContent = new Date().toLocaleDateString();
   document.getElementById('receiptId').textContent = generateRegistrationId();
   document.getElementById('receiptGeneratedDate').textContent = new Date().toLocaleString();
