@@ -1061,61 +1061,6 @@ body {
     order: 1;
   }
   
-  .interest-checkboxes {
-    padding: 1rem;
-    margin-top: 0.5rem;
-  }
-  
-  .interest-category {
-    margin-bottom: 1.5rem;
-    padding: 0.75rem;
-    border-radius: 8px;
-  }
-  
-  .interest-category h5 {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-    color: var(--primary-color);
-  }
-  
-  .checkbox-group {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  
-  .checkbox-item {
-    padding: 0.75rem 0.5rem;
-    font-size: 0.85rem;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-  }
-  
-  .checkbox-item:hover {
-    background: rgba(30, 58, 138, 0.08);
-  }
-  
-  .checkbox-item .checkmark {
-    width: 20px;
-    height: 20px;
-    margin-right: 0.75rem;
-  }
-  
-  .skills-suggestions {
-    padding: 1rem;
-  }
-  
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .skill-category {
-    padding: 0.5rem;
-    font-size: 0.85rem;
-  }
-  
   .review-section {
     padding: 1rem;
     margin-bottom: 1rem;
@@ -1613,13 +1558,6 @@ body {
     min-height: 44px; /* Minimum touch target size */
   }
   
-  .checkbox-item {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 0.5rem;
-  }
-  
   .nav-link {
     min-height: 44px;
     display: flex;
@@ -1655,14 +1593,6 @@ body {
     min-height: 100px;
   }
   
-  .interest-category {
-    margin-bottom: 1rem;
-  }
-  
-  .checkbox-group {
-    gap: 0.75rem;
-  }
-  
   .faculty-title {
     min-height: 44px;
     display: flex;
@@ -1672,24 +1602,6 @@ body {
 
 /* Additional Mobile Improvements */
 @media (max-width: 480px) {
-  .interest-checkboxes {
-    padding: 0.75rem;
-  }
-  
-  .interest-category {
-    padding: 0.6rem;
-    margin-bottom: 1.25rem;
-  }
-  
-  .checkbox-group {
-    gap: 0.6rem;
-  }
-  
-  .checkbox-item {
-    padding: 0.7rem 0.5rem;
-    border-radius: 8px;
-  }
-  
   .form-group {
     margin-bottom: 1.5rem;
   }
@@ -1943,84 +1855,6 @@ body {
   font-weight: bold;
 }
 
-/* Interest Checkboxes */
-.interest-checkboxes {
-  margin-top: 1rem;
-  padding: 1.5rem;
-  background: var(--bg-secondary);
-  border-radius: var(--border-radius-sm);
-  border: 1px solid #e2e8f0;
-}
-
-.interest-category {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: var(--bg-primary);
-  border-radius: var(--border-radius-sm);
-  border-left: 4px solid var(--primary-color);
-}
-
-.interest-category:last-child {
-  margin-bottom: 0;
-}
-
-.interest-category h5 {
-  color: var(--primary-color);
-  font-weight: 600;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.checkbox-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
-}
-
-.checkbox-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: var(--border-radius-sm);
-  transition: var(--transition);
-  font-size: 0.9rem;
-}
-
-.checkbox-item:hover {
-  background: rgba(30, 58, 138, 0.05);
-}
-
-.checkbox-item input[type="checkbox"] {
-  display: none;
-}
-
-.checkbox-item .checkmark {
-  width: 18px;
-  height: 18px;
-  border: 2px solid #cbd5e0;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  flex-shrink: 0;
-}
-
-.checkbox-item input[type="checkbox"]:checked + .checkmark {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
-}
-
-.checkbox-item input[type="checkbox"]:checked + .checkmark::after {
-  content: '✓';
-  color: white;
-  font-weight: bold;
-  font-size: 0.75rem;
-}
 
 /* Terms Checkbox */
 .terms-checkbox {
